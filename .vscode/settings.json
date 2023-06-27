@@ -1,0 +1,18 @@
+{
+    "[python]": {
+        "editor.defaultFormatter": "ms-python.black-formatter"
+    },
+    "python.formatting.provider": "none",
+    "cSpell.words": [
+        "amax",
+        "arange",
+        "argmax",
+        "astype",
+        "fontsize",
+        "matplotlib",
+        "pyplot",
+        "xlabel",
+        "xticks",
+        "ylabel"
+    ]
+}
