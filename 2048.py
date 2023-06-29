@@ -15,6 +15,10 @@ AI_KEY = "'q'"
 AI_PLAY_KEY = "'p'"
 RESTART_KEY = "'r'"
 
+SEARCHES_PER_MOVE = 30
+
+SEARCH_LENGTH = 20
+
 LABEL_FONT = ("Verdana", 40, "bold")
 
 GAME_COLOR = "#BBADA0"
@@ -190,7 +194,7 @@ class Display(Frame):
                     and not game_functions.check_for_loss(self.matrix)
                 ):
                     self.matrix, valid_game, current_score = monte_carlo_ai.ai_move(
-                        self.matrix, 40, 30
+                        self.matrix, SEARCHES_PER_MOVE, SEARCH_LENGTH
                     )
                     self.update_score(current_score)
                     if valid_game:
@@ -201,7 +205,7 @@ class Display(Frame):
 
             if key == AI_KEY:
                 self.matrix, move_made, current_score = monte_carlo_ai.ai_move(
-                    self.matrix, 20, 30
+                    self.matrix, SEARCHES_PER_MOVE, SEARCH_LENGTH
                 )
                 if move_made:
                     self.matrix = game_functions.add_new_tile(self.matrix)
