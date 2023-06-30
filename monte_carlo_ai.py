@@ -41,7 +41,7 @@ def ai_move(board, searches_per_move, search_length):
         #Get the mean of the top 25% of scores out of all the random moves
         final_scores_index_array = np.argsort(final_scores)
         sorted_final_scores = final_scores[final_scores_index_array]
-        mean = np.mean(sorted_final_scores[-len(sorted_final_scores)//4])
+        mean = np.mean(sorted_final_scores[-len(sorted_final_scores)//4 :])
         first_move_scores[i] += mean
     #Choose the highest first move score after the traversal
     best_move_index = np.argmax(first_move_scores)

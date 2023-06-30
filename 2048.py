@@ -1,4 +1,6 @@
 from tkinter import Frame, Label, CENTER
+import csv
+import numpy as np
 
 import game_functions
 import monte_carlo_ai
@@ -14,10 +16,11 @@ RIGHT_KEY = "'d'"
 AI_KEY = "'q'"
 AI_PLAY_KEY = "'p'"
 RESTART_KEY = "'r'"
+AI_DATA_KEY = "'o'"
 
-SEARCHES_PER_MOVE = 30
+SEARCHES_PER_MOVE = 20
 
-SEARCH_LENGTH = 20
+SEARCH_LENGTH = 10
 
 LABEL_FONT = ("Verdana", 40, "bold")
 
@@ -174,17 +177,19 @@ class Display(Frame):
                 int(self.high_score_label.cget("text")),
             )
         )
+    def restart(self):
+        self.game_over_frame.destroy()
+        self.add_game_over()
+        self.init_matrix()
+        self.draw_grid_cells()
+        self.score_label.config(text="0")
 
     def key_press(self, event):
         valid_game = True
         key = repr(event.char)
         self.game_over()
         if key == RESTART_KEY:
-            self.game_over_frame.destroy()
-            self.add_game_over()
-            self.init_matrix()
-            self.draw_grid_cells()
-            self.score_label.config(text="0")
+            self.restart()
         else:
             if key == AI_PLAY_KEY:
                 move_count = 0
@@ -202,7 +207,7 @@ class Display(Frame):
                         self.draw_grid_cells()
                     move_count += 1
                 self.game_over()
-
+                
             if key == AI_KEY:
                 self.matrix, move_made, current_score = monte_carlo_ai.ai_move(
                     self.matrix, SEARCHES_PER_MOVE, SEARCH_LENGTH
