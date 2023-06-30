@@ -16,11 +16,10 @@ RIGHT_KEY = "'d'"
 AI_KEY = "'q'"
 AI_PLAY_KEY = "'p'"
 RESTART_KEY = "'r'"
-AI_DATA_KEY = "'o'"
 
-SEARCHES_PER_MOVE = 20
+SEARCHES_PER_MOVE = 30
 
-SEARCH_LENGTH = 10
+SEARCH_LENGTH = 20
 
 LABEL_FONT = ("Verdana", 40, "bold")
 
@@ -207,7 +206,7 @@ class Display(Frame):
                         self.draw_grid_cells()
                     move_count += 1
                 self.game_over()
-                
+
             if key == AI_KEY:
                 self.matrix, move_made, current_score = monte_carlo_ai.ai_move(
                     self.matrix, SEARCHES_PER_MOVE, SEARCH_LENGTH
