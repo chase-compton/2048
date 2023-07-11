@@ -1,6 +1,6 @@
 # 2048 Game & AI
 Created the game in Python then implemented an AI that uses Monte Carlo Tree Search to find the optimal move in any scenario.
-<img src="https://github.com/chase-compton/2048/assets/97754029/9409cab1-27a1-4d82-bbcc-e142886c070f" width="400">
+<img src="assests/Screenshot 2023-07-11 143239.png" width="400">
 
 
 # How To Play
@@ -11,6 +11,6 @@ Press 'r' to restart once the game is over.
 # AI Results | 80 Games
 30 Searches/Move | Search Length of 20
 
-![image](https://github.com/chase-compton/2048/assets/97754029/3273b147-3684-45ca-a848-b09aedb61706)
+<img src="assests/Screenshot 2023-07-11 144541.png" width="300">
 
 
