@@ -1,5 +1,7 @@
 # 2048 Game & AI
 Created the game in Python then implemented an AI that uses Monte Carlo Tree Search to find the optimal move in any scenario.
+
+
 <img src="assests/Screenshot 2023-07-11 143239.png" width="400">
 
 
